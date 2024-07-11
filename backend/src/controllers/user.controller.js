@@ -236,6 +236,20 @@ const generateAccessAndRefreshTokens = async (userId) => {
       .json(new ApiResponse(200, req.user, "User details fetched successfully"));
   });
 
+  const deleteUser = asyncHandler(async (req, res) => {
+    const { userId } = req.params;
+  
+    const user = await User.findById(userId);
+  
+    if (!user) {
+      throw new ApiError(404, "User not found");
+    }
+  
+    await User.findByIdAndDelete(userId);
+  
+    res.status(200).json(new ApiResponse(200, {}, "User deleted successfully"));
+  });
+
 
   export {
     registerUser,
@@ -245,4 +259,5 @@ const generateAccessAndRefreshTokens = async (userId) => {
     refreshAccessToken,
     changeCurrentPassword,
     getCurrentUser,
+    deleteUser
   }
