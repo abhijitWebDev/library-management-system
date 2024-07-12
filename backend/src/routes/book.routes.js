@@ -15,7 +15,7 @@ router.route('/:id').put(verifyJWT, adminCheck, editBook);
 router.route('/:id').delete(verifyJWT, adminCheck, removeBook);
 
 //route to view book
-router.route('/get-books').get(verifyJWT, getAllBooks);
+router.route('/get-books').get(getAllBooks);
 
 // find a book by id
 router.route('/:id').get(verifyJWT, getBookById);

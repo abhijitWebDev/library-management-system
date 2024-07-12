@@ -1,7 +1,7 @@
 # This is a online library management system project.
 
 ## Backend
-  Sure, here's a more detailed README.md for the backend folder of your Library Management System:
+  This is a detailed description of the components and the features which are provided in the backend.
 
 
 
